@@ -440,3 +440,129 @@ Motor-এর copper wire-এর ক্ষেত্রেও অনেকটা �
 
 
 
+
+
+
+
+# fpv
+
+হ্যাঁ। পুরো জিনিসটা একদম শুরু থেকে সহজ করে বলি।
+
+### VTX আসলে কী?
+
+VTX = **Video Transmitter**।
+
+Drone-এর camera যা দেখে, VTX সেই video **radio signal দিয়ে goggles-এ পাঠায়**।
+
+সহজ chain:
+
+**Camera → VTX → বাতাসে signal → Goggles → তুমি video দেখো**
+
+তোমার ক্ষেত্রে:
+
+**HDZero camera → HDZero Freestyle V2 → HDZero Goggles 2**
+
+আর analog হলে:
+
+**Analog camera → Analog VTX → HDZero Goggles 2-এর analog receiver**
+
+### 1W বলতে কী বোঝায়?
+
+এখানে **W = Watt**, অর্থাৎ VTX কত শক্তিতে radio signal পাঠাচ্ছে।
+
+উদাহরণ:
+
+**25mW = 0.025W**
+**200mW = 0.2W**
+**1W = 1000mW**
+
+তাই 1W হলো 200mW-এর **5 গুণ electrical RF output power**।
+
+কিন্তু একটা ভুল ধারণা যেন না হয়:
+
+**1W = 5 গুণ range না।**
+
+কারণ range-এর ওপর antenna, receiver, frequency, drone-এর অবস্থান, গাছ/দালান/পাহাড় ইত্যাদিও অনেক প্রভাব ফেলে।
+
+### তাহলে 1W-এর লাভ কী?
+
+মূল লাভ হলো **signal-এর margin বাড়ে**।
+
+ধরো:
+
+200mW-তে দূরে গিয়ে video একটু দুর্বল হয়ে যাচ্ছে।
+
+1W-তে একই জায়গায় signal আরও শক্তিশালী হতে পারে, তাই usable video ধরে রাখার সুযোগ বাড়ে।
+
+বিশেষ করে বড় 7–10 inch drone-এ, যেখানে তুমি relatively দূরে উড়াতে চাইতে পারো, higher-power VTX useful হতে পারে।
+
+### কিন্তু 1W-এর সমস্যা কী?
+
+সবকিছুরই trade-off আছে।
+
+**বেশি heat:**
+VTX অনেক বেশি গরম হতে পারে। তাই cooling/airflow গুরুত্বপূর্ণ।
+
+**বেশি power consumption:**
+Battery থেকে বেশি power নেবে।
+
+**Interference:**
+তুমি বেশি শক্তিশালী signal পাঠালে আশেপাশের অন্য FPV system-এ interference করার সম্ভাবনাও বাড়ে।
+
+**Legal restriction:**
+সব frequency/power combination সব জায়গায় freely ব্যবহার করা যায় না। তাই VTX-তে 1W option থাকা মানেই তুমি যেকোনো জায়গায় 1W চালাতে পারবে—এটা ঠিক না।
+
+### Freestyle V2-এর ক্ষেত্রে কী?
+
+তোমার selected **HDZero Freestyle V2** সাধারণভাবে 25mW এবং 200mW modes দিয়ে ব্যবহার করা যায়।
+
+এটার কিছু higher-power capability firmware-এর মাধ্যমে unlock করা যায়। HDZero-এর documentation অনুযায়ী maximum output **channel/frequency অনুযায়ী পরিবর্তিত হয়**; সব channel-এ 1W পাওয়া যায় না।
+
+তাই:
+
+**VTX কিনলাম → 1W → সবসময় 1W চালাব**
+
+এভাবে চিন্তা করার দরকার নেই।
+
+বরং:
+
+**Normal flying → 25/200mW**
+
+**যখন higher power-এর প্রয়োজন এবং আইনগতভাবে অনুমোদিত → appropriate higher-power mode**
+
+### তোমার 7–10 inch drone-এর জন্য
+
+তোমার setup এখন এমন:
+
+**Goggles:** HDZero Goggles 2
+
+**Digital VTX:** HDZero Freestyle V2
+
+**Camera:** HDZero-compatible camera
+
+**Antenna:** ভালো 5.8GHz FPV antenna
+
+আর analog drone-এর জন্য:
+
+**Analog camera → Analog VTX → Goggles 2**
+
+এখানে একটা জিনিস মনে রাখো:
+
+**Range শুধু VTX power দিয়ে তৈরি হয় না।**
+
+অনেক সময় ভালো antenna + সঠিক placement + ভালো receiver = একই power-এ অনেক better result।
+
+তাই আমি তোমার প্রথম Freestyle V2-টা **200mW দিয়ে properly setup/test** করতাম। তারপর বাস্তবে কোথায় limitation হচ্ছে সেটা দেখে higher power দরকার কিনা বুঝতাম।
+
+
+
+
+
+
+
+
+
+
+
+
+
